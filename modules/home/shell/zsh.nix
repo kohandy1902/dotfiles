@@ -34,6 +34,8 @@ in
     enableZshIntegration = true;
   };
 
+  xdg.configFile."zsh-abbr/user-abbreviations".source = ./user-abbreviations;
+
   programs.zsh = {
     enable = true;
     autosuggestion = {
@@ -119,7 +121,7 @@ in
       }
       {
         name = "zsh-abbr";
-        file = "zsh-abbr.zsh";
+        file = "share/zsh/zsh-abbr/zsh-abbr.plugin.zsh";
         src = pkgs.zsh-abbr;
       }
       {
