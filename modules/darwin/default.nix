@@ -1,0 +1,19 @@
+{ ... }:
+
+{
+  imports = [
+    ../shared
+    ../shared/fonts.nix
+
+    ./system/base.nix
+    ./system/container-runtime.nix
+    ./system/homebrew.nix
+
+    ./system/defaults.nix
+    ./system/dock.nix
+    ./system/finder.nix
+    ./system/input.nix
+    ./system/pf.nix
+    ./system/security.nix
+  ];
+}

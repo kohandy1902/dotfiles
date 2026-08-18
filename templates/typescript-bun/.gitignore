@@ -1,0 +1,7 @@
+.direnv
+dist
+node_modules
+result
+.env
+.env.*
+!.env.example
