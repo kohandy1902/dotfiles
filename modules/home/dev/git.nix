@@ -13,7 +13,7 @@ in
 
     signing = {
       format = "openpgp";
-      signByDefault = true;
+      signByDefault = false;
     };
 
     settings = {
