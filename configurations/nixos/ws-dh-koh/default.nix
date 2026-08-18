@@ -46,11 +46,14 @@ in
   boot.specialFileSystems."/sys/kernel/debug".enable = lib.mkForce false;
   boot.specialFileSystems."/sys/kernel/tracing".enable = lib.mkForce false;
 
-  users.groups.${username}.gid = 11000;
+  # Matches the account's existing uid/gid on this host (see git history /
+  # incident notes for ws-dh-koh): NixOS never renumbers an existing local
+  # user, so these must track reality rather than an aspirational value.
+  users.groups.${username}.gid = 11001;
   users.groups.shared.gid = 20001;
   users.users.${username} = {
     isNormalUser = true;
-    uid = 11000;
+    uid = 11001;
     group = username;
     extraGroups = [
       "wheel"
@@ -59,13 +62,13 @@ in
     shell = pkgs.zsh;
     subUidRanges = [
       {
-        startUid = 11001;
+        startUid = 11002;
         count = 54535;
       }
     ];
     subGidRanges = [
       {
-        startGid = 11001;
+        startGid = 11002;
         count = 54535;
       }
     ];
