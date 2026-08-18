@@ -38,5 +38,10 @@
     gcc
     zip
     unzip
+
+    # So SSHing in from a Ghostty client (TERM=xterm-ghostty) doesn't hit
+    # "can't find terminal definition" - Ghostty's terminfo isn't in the
+    # stock ncurses database.
+    ghostty.terminfo
   ];
 }
