@@ -8,6 +8,9 @@ result-*
 *.swp
 *~
 
+# Core dumps (kernel.core_pattern here is bare "core", dumped into cwd)
+core
+
 # direnv
 .direnv/
 .envrc
